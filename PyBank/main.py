@@ -1,7 +1,11 @@
+#import modules
 import os
 import csv
 
+#set path for csv file
 csvpath = os.path.join('Resources','budget_data.csv')
+
+#set variables
 totalmonths = 1
 profitloss = 0
 previousProfitLoss = 0
@@ -9,6 +13,8 @@ netProfitLoss = 0
 netChangeList =[]
 total = 0
 months =[]
+
+#open csv file
 with open(csvpath)as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
@@ -21,6 +27,7 @@ with open(csvpath)as csvfile:
     startdate = int(firstrow[1])
     previousProfitLoss = profitloss
     
+    #begin loop statement
     for row in csvreader:
         total += int(row[1])
         months.append(row[0])
@@ -31,7 +38,8 @@ with open(csvpath)as csvfile:
         netChangeList += [netProfitLoss]
         #print(netProfitLoss)
 
-        
+
+#show output        
 print("Financial Analysis")
 print("-------------------------")
 average = sum(netChangeList)/len(netChangeList)
@@ -45,6 +53,7 @@ minimumprofit=netChangeList.index(min(netChangeList))
 print(f"Greatest Increase in Profits: {months[maxprofit]} (${max(netChangeList)})")
 print(f"Greatest Decrease in Profit: {months[minimumprofit]} (${min(netChangeList)})")
 
+#output to csv
 with open("PyBankAnalysis.txt","w") as asfile:
   asfile.write("Financial Analysis\n")
   asfile.write("-------------------------\n")
