@@ -15,10 +15,7 @@ with open(csvpath)as csvfile:
 
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
-    #firstrow = next(csvreader)
-    #profitloss = int(firstrow[1])
-    #previousProfitLoss = profitloss
-    
+       
     for row in csvreader:
       totalvotes += 1
       if row[2].strip()=="Khan":
@@ -56,7 +53,7 @@ with open("Poll Results.txt","w") as asfile:
   asfile.write("-------------------------\n")
   asfile.write(f"Total Votes: {totalvotes}\n")
   asfile.write("-------------------------\n")
-  asfile.write(f"Khan: {kahnpercent}% ({Khan})\n")
+  asfile.write(f"Khan: {khanpercent}% ({Khan})\n")
   asfile.write(f"Correy: {correypercent}% ({Correy})\n")
   asfile.write(f"Li: {lipercent}% ({Li})\n")
   asfile.write(f"otooley: {otooleypercent}% ({otooley})\n")
