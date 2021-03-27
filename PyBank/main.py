@@ -7,8 +7,6 @@ profitloss = 0
 previousProfitLoss = 0
 netProfitLoss = 0
 netChangeList =[]
-greatestdecrease =["", 9999999]
-greatestincrease =["", 0]
 total = 0
 months =[]
 with open(csvpath)as csvfile:
@@ -47,7 +45,7 @@ minimumprofit=netChangeList.index(min(netChangeList))
 print(f"Greatest Increase in Profits: {months[maxprofit]} (${max(netChangeList)})")
 print(f"Greatest Decrease in Profit: {months[minimumprofit]} (${min(netChangeList)})")
 
-with open("printedresults.txt","w") as asfile:
+with open("PyBankAnalysis.txt","w") as asfile:
   asfile.write("Financial Analysis\n")
   asfile.write("-------------------------\n")
   asfile.write(f"Total Months: {totalmonths}\n")
