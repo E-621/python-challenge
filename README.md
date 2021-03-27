@@ -8,4 +8,6 @@ Python challenge is a homework assignment to test my skills with python programm
 
 ![image](https://user-images.githubusercontent.com/79013025/112736041-4e8ed200-8f15-11eb-9b1c-9676b136e9ba.png)
 
+Systems Used: Python 3, Gitbash and Visual Studio Code
+
 Credits: University of Denver, Tutors Karl P. w/ wyzant & Simon Rennocks w/ Central Tutor Support.
