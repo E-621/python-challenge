@@ -1,13 +1,18 @@
+#Import modules
 import os
 import csv
 
+#set path for csv file
 csvpath = os.path.join('Resources','election_data.csv')
+
+#set variables
 totalvotes = 0
 Khan=0
 Correy=0
 Li=0
 otooley = 0
 
+#open csv file
 with open(csvpath)as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
@@ -15,7 +20,8 @@ with open(csvpath)as csvfile:
 
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
-       
+
+    #begin loop statement   
     for row in csvreader:
       totalvotes += 1
       if row[2].strip()=="Khan":
@@ -26,7 +32,8 @@ with open(csvpath)as csvfile:
         Li +=1
       else: 
         otooley += 1
-        
+
+ #show output       
 print("Election Results")
 print("-------------------------")
 
@@ -48,6 +55,8 @@ canidates["Li"]=Li
 canidates["otooley"]=otooley
 print(f"Winner: {max(canidates,key=canidates.get)}")
 print("-------------------------")
+
+#output to csv
 with open("Poll Results.txt","w") as asfile:
   asfile.write("Election Results\n")
   asfile.write("-------------------------\n")
